@@ -61,21 +61,6 @@ class LinkedList
         }
     }
 
-    public function compare_outer($outer_node)
-    {
-        if ($this->head !== null && $outer_node !== null) {
-            $this->append($outer_node->val);
-        }
-        if ($outer_node->next !== null)
-            $this->_compare_outer($outer_node->next);
-    }
-    public function _compare_outer($outer_node = null)
-    {
-        $this->append($outer_node->val);
-        if ($outer_node->next !== null)
-            $this->_compare_outer($outer_node->next);
-    }
-
     public function outer_append($outer_node = null)
     {
         if ($this->head !== null && $this->head->val !== null) {
