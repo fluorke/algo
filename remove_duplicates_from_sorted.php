@@ -1,0 +1,21 @@
+<?php
+//идем по массиву в один проход, проверяем на дубликаты, unset двигает индексы, добавляем в конец массива '_';
+
+$nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+$arr = [];
+
+for ($i = 0; $i < count($nums); $i++) {
+    if (in_array($nums[$i], $arr)) {
+        unset($nums[$i]);
+        array_push($nums, '_');
+    } else {
+        $arr[] = $nums[$i];
+    }
+}
+
+//считаем уникальные числа.
+$k = count(array_filter($nums, fn ($k) => $k !== '_'));
+
+var_dump($nums);
+
+echo $k;
